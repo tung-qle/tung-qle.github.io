@@ -34,7 +34,7 @@ import pandas as pd
 
 # In[3]:
 
-publications = pd.read_csv("publications.tsv", sep="\t", header=0)
+publications = pd.read_csv("publications.tsv", sep=";", header=0)
 publications
 
 
@@ -63,42 +63,39 @@ def html_escape(text):
 
 import os
 for row, item in publications.iterrows():
-    
+    print(item)
     md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
     html_filename = str(item.pub_date) + "-" + item.url_slug
     year = item.pub_date[:4]
     
     ## YAML variables
     
-    md = "---\ntitle: \""   + item.title + '"\n'
+    md = "---\ntitle: \""   + item.title + "\"\n" 
     
     md += """collection: publications"""
     
     md += """\npermalink: /publication/""" + html_filename
     
-    if len(str(item.excerpt)) > 5:
-        md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
+    md += """\ntype: """ + item.type
     
     md += "\ndate: " + str(item.pub_date) 
     
     md += "\nvenue: '" + html_escape(item.venue) + "'"
     
-    if len(str(item.paper_url)) > 5:
-        md += "\npaperurl: '" + item.paper_url + "'"
+    md += "\npaperurl: '" + item.paper_url + "'"
+    # if len(str(item.paper_url)) > 5:
+    #     md += "\npaperurl: '" + item.paper_url + "'"
     
-    md += "\ncitation: '" + html_escape(item.citation) + "'"
+    # md += "\ncitation: '" + html_escape(item.citation) + "'"
     
     md += "\n---"
     
     ## Markdown description for individual page
     
-    if len(str(item.paper_url)) > 5:
-        md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
+    # if len(str(item.paper_url)) > 5:
+    #     md += "\n\n<a href='" + item.paper_url + "'>[PDF]</a>\n" 
         
-    if len(str(item.excerpt)) > 5:
-        md += "\n" + html_escape(item.excerpt) + "\n"
-        
-    md += "\nRecommended citation: " + item.citation
+    # md += "\nRecommended citation: " + item.citation
     
     md_filename = os.path.basename(md_filename)
        

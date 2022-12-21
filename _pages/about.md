@@ -11,7 +11,7 @@ redirect_from:
 I am a third-year PhD student in [DANTE/OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/).
 {: .text-justify}
 
-My PhD project is about Sparse Matrix Factorization - a problem which ask to approximate a dense matrix to multiple sparse factors. The problem finds itself between the intersection of many research domains: linear algebra, (polynomial) optimization and combinatorics. I am also interested in theory of Neural Networks, non-convex optimization and other subjects in Theoretical Computer Science.
+My PhD project is about Sparse Matrix Factorization - a problem which ask to approximate a dense matrix by product of multiple sparse factors. The problem finds itself between the intersection of many research domains: linear algebra, (polynomial) optimization and combinatorics. I am also interested in theory of Neural Networks, non-convex optimization and other subjects in Theoretical Computer Science.
 {: .text-justify}
 
 <figure>

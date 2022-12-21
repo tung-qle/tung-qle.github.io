@@ -27,14 +27,24 @@
     {% endif %}
     
     
-    <p class="archive__item-title" itemprop="headline">
+    <p>
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
-      <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} 
-      <a href=" {{ post.paperurl }} "><u>[PDF]</u></a>
+      {% if post.collection == "publications" %}
+        <i textcolor='black'>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} 
+        <a href=" {{ post.paperurl }} "><u>[PDF]</u></a>
+      {% elsif post.collection == "teaching" %}
+        <i textcolor='black'> {{post.position}} </i>
+
+        <br>
+        <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Period:</strong> 
+        <time datetime="{{ post.start_date | date: "%B %Y" }}">{{ post.start_date | date: "%B %Y" }}</time> - 
+        <time datetime="{{ post.end_date | date: "%B %Y" }}">{{ post.end_date | date: "%B %Y" }}</time>, {{ post.venue }}
+        </br>
+      {% endif %}
     </p>
     
     {% if post.read_time %}

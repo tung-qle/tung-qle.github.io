@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="lib/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/css/bootstrap-theme.css" />
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favicon.png" />
+    <title>EPS-2021</title>
+
+    <style type="text/css">
+     table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+       margin: 0; padding: 0; vertical-align: baseline; border: none; }
+     table.sourceCode { width: 100%; line-height: 100%; }
+     td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+     td.sourceCode { padding-left: 5px; }
+     code > span.kw { color: #007020; font-weight: bold; } /* KeyWord */
+     code > span.dt { color: #902000; } /* Data Type */
+     code > span.dv { color: #4070a0; } /* Data Value */
+     code > span.co { color: #8a30ad; font-style: italic; } /* Comment */
+     code > span.ot { color: #007020; } /* Other */
+     code > span.al { color: #ff0000; font-weight: bold; } /* Alert */ 
+     th {text-align:center;}
+    </style>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <ul class="nav navbar-nav">
+	<li> <a class="navbar-brand" href=".">EPS</a> </li>
+	<li> <a href="td.php">TD</a> </li>
+	<li> <a href="scoreboard.php">Scoreboard</a> </li>
+	<li> <a href="cours.php">Cours</a> </li>
+	<li> <a href="lien.php">Liens utiles</a> </li>
+      </ul>
+
+      <div class="navbar-right">
+		<a href="signin.php"><button type="button" class="btn btn-default navbar-btn">Connexion</button></a>
+	<a href="signup.php"><button type="button" class="btn btn-default navbar-btn">Inscription</button></a>
+	      </div>
+    </nav>
+
+<h1 id="workflow">Workflow</h1>
+<p>Voyons une manière de s’organiser afin de travailler efficacement. Nous illustrons notre exemple en résolvant le problème suivant:</p>
+<blockquote>
+<p>Étant une liste de prénoms composés uniquement de [a-zA-Z], écrivez pour chaque prénom, <strong>Bonjour <em>prénom</em> !</strong></p>
+</blockquote>
+<p>Commençons par créer le fichier contenant un exemple d’entrée dans un fichier <code>hello.in</code>:</p>
+<pre><code>Luke
+Leia
+Han
+Chewbacca
+R2D2
+Ben</code></pre>
+<p>Puis le fichier contenant la sortie attendue <code>hello.res</code>:</p>
+<pre><code>Bonjour Luke !
+Bonjour Leia !
+Bonjour Han !
+Bonjour Chewbacca !
+Bonjour R2D2 !
+Bonjour Ben !</code></pre>
+<p>Nous pouvons maintenant commencer à coder dans un fichier <code>hello.cpp</code>:</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;string&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+    string s;
+    <span class="kw">while</span>(cin &gt;&gt; s)
+        cout &lt;&lt; <span class="st">&quot;Bonjour &quot;</span> &lt;&lt; s &lt;&lt; <span class="st">&quot; !</span><span class="ch">\n</span><span class="st">&quot;</span>;
+}</code></pre>
+<p>Quelques remarques sur ce code:</p>
+<ul>
+<li><code>#include&lt;iostream&gt;</code> permet d’utiliser <code>cin</code> et <code>cout</code> afin de lire l’entrée et écrire la sortie.</li>
+<li><code>#include&lt;string&gt;</code> permet d’utiliser les <code>string</code></li>
+<li><code>using namespace std</code> permet d’éviter de devoir préfixer les objets de la librairie standard de <code>std::</code>. Vu que les programmes d’EPS sont courts et ne peuvent rien inclure hors de la STL cela ne pose pas de problème.</li>
+</ul>
+<p>Il faut ensuite compiler ce programme. À l’école le compilateur est <code>g++</code>. Il est fortement conseiller d’<em>activer les warnings</em> et on va également utiliser certaines extensions de c++17 vous compilez donc avec <code>g++ -Wall -Wextra -std=c++17 hello.cpp</code> qui vous produit un exécutable <code>a.out</code>.</p>
+<p>Vous pouvez maintenant tester votre programme. Comme il lit sur l’entrée standard il faut rediriger le contenu de votre fichier d’entrée sur l’entrée standard <code>./a.out &lt; hello.in</code>. La sortie est alors affichée sur la sortie standard, vous pouvez alors regarder si le programme vous semble correct.</p>
+<p>Attention votre sortie doit être exactement la même que la sortie attendue, vous pouvez donc utiliser <code>diff</code> pour vérifier que votre sortie est exactement la bonne. <code>./a.out &lt; hello.in &gt; hello.out</code> permet de rediriger la sortie dans votre programme dans le fichier <code>hello.out</code>. Ensuite la commande <code>diff hello.out hello.res</code> vous permet de vous assurer que les deux fichiers sont identiques et vous affiche les différences dans le cas contraire.</p>
+<p>Enfin votre programme doit s’exécuter assez rapidement, si vous avez un jeu de données sensiblement de même taille que celui attendu vous pouvez regarder le temps que met votre programme à traiter ce jeu de données. Pour cela compilez avec les optimisations <code>g++ -O2 -Wall -Wextra -std=c++17 hello.cpp</code>, puis vous pouvez utiliser <code>time ./a.out &lt; hello.in &gt; hello.out</code>. Si votre programme est trop lent vous pouvez le stopper en faisant <code>Ctrl + c</code>.</p>
+<h1 id="entrée-sortie">Entrée Sortie</h1>
+<p>Dans chaque problème il faudra lire sur l’entrée standard et écrire sur la sortie standard. Certains problèmes ne sont pas spécialement pensés pour faciliter la lecture d’entrée, heureusement C++ dispose de plusieurs fonctions qui vous faciliteront la partie entrée sortie. Nous vous conseillons fortement d’utiliser les fonctions <code>cin/cout</code> du C++ plutôt que <code>scanf/printf</code> de C.</p>
+<h2 id="généralités">Généralités</h2>
+<p>Les fonctions les plus utilisées seront <code>&gt;&gt;</code> et <code>&lt;&lt;</code>. <code>getline</code> pourra parfois nous être utile. Il est possible de mettre <code>&gt;&gt;</code> et <code>getline</code> dans la condition d’une boucle <code>while</code> pour lire entièrement un flux de taille arbitraire.</p>
+<p>Dans les cas simples et fréquents, <code>&gt;&gt;</code> lit un stream et interprète les données. Il saute les caractères blancs et s’arrête à la fin du flux. Attention la position dans le flux est juste après le mot lu.</p>
+<p><code>getline</code> lit une ligne entière. Attention en le combinant avec <code>&lt;&lt;</code> on peut facilement lire uniquement le caractère de retour de ligne au lieu de la ligne suivante. Dans ce cas on peut utiliser <code>ignore</code> pour extraire sans traiter les caractères blancs.</p>
+<p>Voici un exemple sur ce fichier d’entrée. (3.23e3 est le nombre 3230 en notation scientifique)</p>
+<pre><code>12      3.23e3
+
+Coucou@&amp;#.       p
+Paf c
+c
+Hello
+World !</code></pre>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;string&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+<span class="dt">int</span> n;
+<span class="dt">double</span> d;
+string s;
+<span class="dt">char</span> c;
+cin &gt;&gt; n &gt;&gt; d &gt;&gt; s &gt;&gt; c;
+<span class="co">//n=12, d=3230, s=Coucou@&amp;#., c=p</span>
+cin.ignore();
+getline(cin, s);
+cin &gt;&gt; c;
+<span class="co">//s=&quot;Paf c&quot;;</span>
+<span class="co">//c=&#39;c&#39;</span>
+getline(cin, s);
+<span class="co">//s=&quot;\n&quot;</span>
+cin &gt;&gt; s;
+<span class="co">//s==&quot;Hello&quot;</span>
+cin.ignore();
+getline(cin, s);
+<span class="co">//s=&quot;World !&quot;</span>
+}</code></pre>
+<h2 id="lire-caractère-par-caractère">Lire caractère par caractère</h2>
+<p>Par défaut <code>cin</code> saute les caractères blancs (espace tabulation et retour de ligne), si vous voulez vraiment lire caractère par caractère il faut passer le manipulateur <code>noskipws</code>. Pour revenir dans l’état normal il faut ensuite passer le manipulateur <code>skipws</code>. Voici un exemple:</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;sstream&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+  <span class="dt">char</span> a, b, c;
+
+  {
+  istringstream iss (<span class="st">&quot;  123&quot;</span>);
+  iss &gt;&gt; skipws &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+  cout &lt;&lt; a &lt;&lt; b &lt;&lt; c &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+  }
+  {
+  istringstream iss (<span class="st">&quot;  123&quot;</span>);
+  iss &gt;&gt; noskipws &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+  cout &lt;&lt; a &lt;&lt; b &lt;&lt; c &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+  }
+}</code></pre>
+<p>qui affiche</p>
+<pre><code>123
+  1</code></pre>
+<h2 id="parser-une-ligne-contenant-un-nombre-arbitraire-dentiers">Parser une ligne contenant un nombre arbitraire d’entiers</h2>
+<p>Nous avons vu qu’il était facile de traiter un fichier avec un nombre arbitraire de lignes. Voyons comment adapter ceci pour traiter une ligne avec un nombre arbitraire d’entiers à traiter.</p>
+<p>Nous allons lire toute la ligne d’un coup avec <code>getline</code>, et transformer la chaine obtenue en flux afin de pouvoir utiliser la même méthode que pour lire le fichier.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;string&gt;</span>
+<span class="ot">#include&lt;sstream&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+    string s;
+    <span class="co">//commençons par lire la ligne</span>
+    getline(cin, s);
+    <span class="co">//transformons ensuite notre chaine de caractères en un flux de lecture</span>
+    istringstream ss(s);
+    <span class="co">//nous pouvons maintenant utiliser ss comme cin</span>
+    <span class="dt">int</span> tmp;
+    <span class="kw">while</span>(ss &gt;&gt; tmp)
+        cout &lt;&lt; tmp;
+}</code></pre>
+<h2 id="afficher-exactement-6-chiffres-après-la-virgule">Afficher exactement 6 chiffres après la virgule</h2>
+<p>Rien de compliqué, mais il faut le savoir, le manipulateur <code>setprecision(n)</code> permet d’afficher les nombres à virgule avec une précision de <code>n</code>. Le manipulateur <code>fixed</code> permet lui de forcer l’affichage des 0 non significatifs.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;iomanip&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+    <span class="dt">double</span> a=<span class="fl">1.2</span>, b=<span class="fl">1.23456789123456789</span>;
+    cout &lt;&lt; a &lt;&lt; &#39; &#39; &lt;&lt; b &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+    cout &lt;&lt; fixed &lt;&lt; setprecision(<span class="dv">6</span>) &lt;&lt; a &lt;&lt; &#39; &#39; &lt;&lt; b &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+}</code></pre>
+<p>affiche</p>
+<pre><code>1.2 1.23457
+1.200000 1.234568</code></pre>
+<h2 id="mes-entrées-sorties-sont-trop-lentes">Mes entrées sorties sont trop lentes</h2>
+<p>C’est un problème assez délicat qui dépend pas mal de la plateforme (cygwin sous windows est extrêmement mauvais par exemple), mais en général il est dit que <code>scanf/printf</code> sont plus rapides que <code>cin/cout</code>. En fait par défaut <code>cin/cout</code> sont synchronisés sur <code>scanf/printf</code> ce qui explique leurs lenteurs. Si vous n’utilisez pas <code>scanf/printf</code> cette synchronisation est inutile, vous pouvez la désactiver. De plus votre programme étant testé en mode non interactif, vous n’avez pas non plus besoin de la synchronisation entre <code>cin</code> et <code>cout</code>. Sans cette synchronisation (et ça dépend des plateformes et du compilateur) <code>cin/cout</code> sont globalement aussi rapides que <code>scanf/printf</code>. Notez que cette optimisation n’est utile que lorsque les entrées sorties ne sont pas négligeables devant la complexité de votre algorithme (i.e. votre algo est au pire en O(n ln(n))).</p>
+<p>Pour désactiver ces synchronisations il suffit d’utiliser <code>sync_with_stdio</code> et <code>.tin</code>, voici un exemple.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+    ios::sync_with_stdio(<span class="kw">false</span>);
+    cin.tie(<span class="kw">nullptr</span>);
+    <span class="dt">int</span> tmp;
+    <span class="kw">while</span>(cin &gt;&gt; tmp)
+        cout &lt;&lt; tmp &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+}</code></pre>
+<h1 id="nombres">Nombres</h1>
+<p>Pour représenter les nombres, vous pouvez vous limiter à trois types:</p>
+<ul>
+<li><code>double</code> dès que les nombres considérés ne sont pas entiers, utilisez des doubles.</li>
+<li><code>int</code> pour les entiers inférieurs à 10<sup>9</sup>.</li>
+<li><code>long long</code> pour les entiers jusqu’à 10<sup>18</sup>.</li>
+</ul>
+<p>Attention utiliser des <code>int</code> à la place de <code>long long</code> est sensiblement plus rapide (i.e. certains problèmes ne valideront pas avec des <code>long long</code>).</p>
+<p>Attention également aux calculs intermédiaires qui ne doivent pas dépasser la capacité du type. Par exemple si on prend cet extrait de code d’une exponentiation modulaire rapide avec <code>a</code>, <code>tmp</code> et <code>MOD</code> des entiers inférieurs à 10<sup>9</sup></p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">long</span> <span class="dt">long</span> a,tmp,MOD;
+<span class="kw">return</span> (a*tmp*tmp)%MOD;</code></pre>
+<p>Donne un résultat faux, en effet le produit <code>a*tmp*tmp</code> peut dépasser 10<sup>18</sup> même si on en prend ensuite le modulo, il faut donc prendre le modulo des résultats intermédiaires.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">int</span> a,tmp,MOD;
+<span class="kw">return</span> (a*((tmp*tmp)%MOD))%MOD;</code></pre>
+<p>Donne également un résultat incorrect, car les produits intermédiaires dépassent la capacité d’un <code>int</code>.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">long</span> <span class="dt">long</span> a,tmp,MOD;
+<span class="kw">return</span> (a*((tmp*tmp)%MOD))%MOD;</code></pre>
+<p>est la version correcte.</p>
+<h1 id="vector">Vector</h1>
+<p>Vector est un conteneur pour les tableaux dynamiques. Les fonctions les plus utiles sont l’opérateur <code>[]</code> et la fonction <code>push_back</code>. <code>push_back</code> permet d’insérer en fin de tableau une nouvelle valeur, cela agrandit le tableau en temps constant amorti. L’opérateur <code>[]</code> permet d’accéder à la n<sup>ème</sup> valeur du tableau en temps constant. Les indices commencent à partir de 0 jusqu’à la taille du vector-1. Le tri de tableau existe dans la bibliothèque de template <code>algorithm</code>.</p>
+<p>Voici un exemple simple d’utilisation.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;vector&gt;</span>
+<span class="ot">#include&lt;algorithm&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+    <span class="co">//crée un tableau t de 5 entiers (1,2,3,4,5)</span>
+    vector&lt;<span class="dt">int</span>&gt; t{<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>};
+    <span class="co">//crée un tableau d de 12 flotants initialisés à 3.14</span>
+    vector&lt;<span class="dt">double</span>&gt; d(<span class="dv">12</span>,<span class="fl">3.14</span>);
+
+    cout &lt;&lt; d[<span class="dv">0</span>] &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+    <span class="co">//crée un tableau p de char de taille 0</span>
+    vector&lt;<span class="dt">char</span>&gt; p;
+
+    p.push_back(&#39;z&#39;);
+    <span class="co">//p est maintenant de taille 1 et contient &#39;z&#39;;</span>
+    p.push_back(&#39;a&#39;);
+    <span class="co">//p est maintenant de taille 2 et contient &#39;z&#39; puis &#39;a&#39;;</span>
+
+    <span class="co">//affiche le tableau p</span>
+    <span class="kw">for</span>(<span class="dt">int</span> i=<span class="dv">0</span>;i&lt;<span class="dt">int</span>(p.size());++i)
+        cout &lt;&lt; p[i] &lt;&lt; &#39; &#39;;
+    cout &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+
+    sort(begin(p), end(p));
+    <span class="co">//p est maintenant de taille 2 et contient &#39;a&#39; puis &#39;z&#39;;</span>
+
+    <span class="co">//une autre manière d&#39;afficher le tableau p</span>
+    <span class="kw">for</span>(<span class="dt">char</span> c:p)
+        cout &lt;&lt; c &lt;&lt; &#39; &#39;;
+    cout &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+}</code></pre>
+<p>Qui affiche:</p>
+<pre><code>3.14
+z a
+a z</code></pre>
+<h1 id="map">Map</h1>
+<p>Map est un conteneur permettant d’utiliser des tableaux associatifs triés par clé supportant des opérations en O(lg(n)). L’opérateur le plus utile est <code>[key]</code> qui permet d’accéder à la valeur stockée pour key. Attention si cette valeur n’existe pas elle est crée avec l’initialisateur par défaut (pour les <code>int</code> c’est 0).</p>
+<p>Vous pouvez voir les autres fonctions utiles des <code>map</code> <a href="http://www.cplusplus.com/reference/map/map/">ici</a></p>
+<p>Voici un exemple simple d’utilisation.</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;map&gt;</span>
+<span class="ot">#include&lt;string&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main(){
+  map&lt;<span class="dt">char</span>,string&gt; mymap;
+
+  mymap[&#39;b&#39;]=<span class="st">&quot;another element&quot;</span>;
+  mymap[&#39;a&#39;]=<span class="st">&quot;an element&quot;</span>;
+  mymap[&#39;c&#39;]=mymap[&#39;b&#39;];
+
+  cout &lt;&lt; <span class="st">&quot;mymap[&#39;a&#39;] is &quot;</span> &lt;&lt; mymap[&#39;a&#39;] &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+  cout &lt;&lt; <span class="st">&quot;mymap[&#39;b&#39;] is &quot;</span> &lt;&lt; mymap[&#39;b&#39;] &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+  cout &lt;&lt; <span class="st">&quot;mymap[&#39;c&#39;] is &quot;</span> &lt;&lt; mymap[&#39;c&#39;] &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+  cout &lt;&lt; <span class="st">&quot;mymap[&#39;d&#39;] is &quot;</span> &lt;&lt; mymap[&#39;d&#39;] &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+
+  <span class="co">//version pre c++17</span>
+  <span class="co">//for(map&lt;char,string&gt;::iterator it=mymap.begin();it!=mymap.end();++it)</span>
+  <span class="co">//  cout &lt;&lt; &quot;key: &quot; &lt;&lt; it-&gt;first &lt;&lt; &quot;, value: &quot; &lt;&lt; it-&gt;second &lt;&lt; &#39;\n&#39;;</span>
+
+  <span class="kw">for</span>(<span class="dt">auto</span>&amp; x:mymap)
+    cout &lt;&lt; <span class="st">&quot;key: &quot;</span> &lt;&lt; x.first &lt;&lt; <span class="st">&quot;, value: &quot;</span> &lt;&lt; x.second &lt;&lt; <span class="ch">&#39;\n&#39;</span>;
+
+}</code></pre>
+<p>qui affiche:</p>
+<pre><code>mymap[&#39;a&#39;] is an element
+mymap[&#39;b&#39;] is another element
+mymap[&#39;c&#39;] is another element
+mymap[&#39;d&#39;] is
+key: a, value: an element
+key: b, value: another element
+key: c, value: another element
+key: d, value:</code></pre>
+<h1 id="mes-propres-structures-de-données">Mes propres structures de données</h1>
+<p>Supposons que vous vouliez une structure de donnée pour représenter un cercle. Vous voulez également pouvoir utiliser des <code>vector&lt;cercle&gt;</code> ainsi que d’autres conteneurs de cercles. Il faut pour cela créer votre propre structure de données. Le mot clé est struct et il faut également définir un constructeur (une fonction membre sans type de retour du même nom que votre struct). Attention il y a un <code>;</code> à la fin de la déclaration. Voici un exemple:</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include&lt;iostream&gt;</span>
+<span class="ot">#include&lt;vector&gt;</span>
+<span class="ot">#include&lt;algorithm&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="kw">struct</span> mycercle{
+  <span class="dt">int</span> x,y,r;
+
+ <span class="co">//notez le c=1, qui rend le troisième paramètre optionnel</span>
+ <span class="co">//s&#39;il n&#39;est pas spécifié ce sera 1</span>
+ mycercle(<span class="dt">int</span> a, <span class="dt">int</span> b, <span class="dt">int</span> c=<span class="dv">1</span>){
+    x=a;
+    y=b;
+    r=c;
+  }
+
+
+  <span class="co">//Une déclaration équivalente</span>
+  <span class="co">//mycercle(int a, int b, int c=1):x(a),y(b),r(c){}</span>
+
+  <span class="co">//on peut aussi spécifier un opérateur de comparaison afin</span>
+  <span class="co">//d&#39;utiliser les algorithmes de la STL</span>
+
+  <span class="co">//que se passe t&#39;il si je compare mon cercle avec un autre cercle c</span>
+  <span class="co">//noter les const qui permettent de s&#39;assurer qu&#39;aucun cercle ne sera</span>
+  <span class="co">//modifié durant la comparaison</span>
+  <span class="co">//ici un cercle est plus petit qu&#39;un autre s&#39;il a plus petit rayon.</span>
+  <span class="dt">bool</span> <span class="kw">operator</span>&lt;(<span class="dt">const</span> mycercle&amp; c) <span class="dt">const</span>{
+    <span class="kw">return</span> r&lt;c.r;
+  }
+
+};
+
+<span class="co">//le mot clé const permet de s&#39;assurer que c ne sera pas modifié</span>
+<span class="co">//le &amp; permet de passer c par référence</span>
+<span class="dt">void</span> affiche(<span class="dt">const</span> mycercle&amp; c){
+  cout &lt;&lt; <span class="st">&quot;Le cercle a pour centre &quot;</span> &lt;&lt; c.x &lt;&lt; &#39;,&#39;
+       &lt;&lt; c.y &lt;&lt; <span class="st">&quot; et pour rayon &quot;</span> &lt;&lt; c.r &lt;&lt;<span class="ch">&#39;\n&#39;</span>;
+}
+
+<span class="dt">int</span> main(){
+  mycercle C1(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>);
+  affiche(C1);
+<span class="co">//Le cercle a pour centre 0,0 et pour rayon 2</span>
+  mycercle C2(<span class="dv">2</span>,<span class="dv">7</span>);
+  affiche(C2);
+<span class="co">//Le cercle a pour centre 2,7 et pour rayon 0</span>
+  vector&lt;mycercle&gt; t1;
+  <span class="co">//vector&lt;mycercle&gt; t2(5);</span>
+  <span class="co">//Ne fonctionne pas, car il n&#39;y a pas de constructeur par défaut</span>
+  <span class="co">//il faut au choix donner des valeurs par défaut à tous les paramètres</span>
+  <span class="co">//du constructeur ou faire un constructeur sans paramètres</span>
+
+  vector&lt;mycercle&gt; t3{mycercle{<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}, mycercle{<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>}};
+  sort(begin(t3), end(t3));
+}</code></pre>
+<h1 id="plus-longue-sous-suite-croissante">Plus longue sous suite croissante</h1>
+<p>Le but de cet algorithme est de calculer une plus longue sous suite croissante d’une chaine <code>x</code> donnée en entrée.</p>
+<p>La première idée est de calculer la plus longue sous suite commune à <code>x</code> et à <code>sort(begin(x), end(x))</code>. On peut faire cela avec une programmation dynamique où <code>t[i][j]</code> est la taille de la plus longue sous suite commune entre les <code>i</code> premier nombre de <code>x</code> et les <code>j</code> premier de <code>sort(begin(x), end(x))</code>. Il n’y a rien de très compliqué mais l’algorithme final est en <em>O(n<sup>2</sup>)</em>. Voyons comment résoudre ce problème en <em>O(n ln(n))</em>.</p>
+<p>Pour résoudre ce problème nous allons utiliser un tableau <code>m</code> tel que <code>m[i]</code> contient l’indice du plus petit entier qui termine une LIS de taille <code>i+1</code>. (le +1 n’est là que car les tableaux sont numeroté à partir de 0). La taille de la plus grande LIS est donc la taille du tableau <code>m</code>.</p>
+<p>On lit la séquence <code>x</code> dans l’ordre et on met à jour <code>m</code>. Cet algo est simple à coder et fonctionne en temps <em>O(n<sup>2</sup>)</em>, en effet pour mettre à jour <code>m</code> on doit parcourir tout le tableau <code>m</code> et trouver l’indice <code>i</code> tels que <code>t[m[i]]&lt;curr&lt;t[m[i+1]]</code>. Le point clé pour accélerer cet algo est de remarquer que le tableau <code>t[m[i]]</code> est trié. En effet si on a une LIS de taille <code>k</code> finissant par <code>n</code>, on a également une LIS de taille <code>k-1</code> finissant par <code>n</code>. On peut donc trouver l’indice de mise à jour du tableau <code>m</code> en temps logarithmique.</p>
+
+<!--
+
+<p>Voici un exemple de code pour ce problème:</p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">//Calcule une plus longue sous suite strictement croissante de x</span>
+<span class="co">//et place le resultat dans b.</span>
+<span class="co">//Attention b doit etre un vecteur vide !</span>
+<span class="dt">void</span> LIS(<span class="dt">const</span> vector&lt;<span class="dt">int</span>&gt; &amp;x, vector&lt;<span class="dt">int</span>&gt; &amp;b){
+  <span class="kw">if</span>(x.empty()) <span class="kw">return</span>;
+
+  <span class="co">//tableau des predecesseurs pour la reconstruction</span>
+  vector&lt;<span class="dt">int</span>&gt; p(x.size());
+  vector&lt;<span class="dt">int</span>&gt; m(<span class="dv">1</span>,<span class="dv">0</span>);
+
+  <span class="kw">for</span>(<span class="dt">int</span> i=<span class="dv">1</span>;i&lt;<span class="dt">int</span>(x.size());++i){
+
+    <span class="co">//si x[i] augmente la LIS courante</span>
+    <span class="kw">if</span>(x[i]&gt;x[m.back()]){
+      p[i]=m.back();
+      m.push_back(i);
+      <span class="kw">continue</span>;
+    }
+    <span class="co">//sinon recherche dichotomique</span>
+    <span class="dt">int</span> lo=<span class="dv">0</span>, hi=m.size()-<span class="dv">1</span>;
+    <span class="kw">while</span>(lo!=hi){
+      <span class="dt">int</span> mid=(lo+hi)/<span class="dv">2</span>;
+      <span class="kw">if</span>(x[m[mid]]&lt;x[i]) lo=mid<span class="dv">+1</span>;
+      <span class="kw">else</span> hi=mid;
+    }
+    <span class="co">//mise a jour du predecesseur</span>
+    p[i]=m[lo<span class="dv">-1</span>];
+    <span class="co">//et si besoin de la LIS que fini x[i]</span>
+    <span class="kw">if</span>(x[i]&lt;x[m[lo]])
+      m[lo]=i;
+  }
+
+  <span class="co">//creation de la solution</span>
+  <span class="dt">int</span> curr=m.back();
+  <span class="dt">int</span> i=m.size();
+  <span class="kw">while</span>(i--){
+    b.push_back(x[curr]);
+    curr=p[curr];
+  }
+
+  reverse(b.begin(), b.end());
+}</code></pre>
+
+-->
+
+<h1 id="génération-exhaustive">Génération exhaustive</h1>
+<p>Parfois la seule solution à un problème est de tester toutes les solutions possible. Voyons trois types de choses que l’on peut générer et comment faire.</p>
+<h2 id="sous-ensemble">Sous ensemble</h2>
+<p>Pour générer tous (<em>2<sup>n</sup></em>) les sous ensembles, d’un ensemble on peut utiliser le codage binaire d’un entier pour représenter les élements choisi du sous-ensemble. Si le i<sup>ème</sup> bit est à <code>1</code> on prend le i<sup>ème</sup> élément dans le sous ensemble. Pour ce genre de code il est bon de connaitre les opérations bit à bit.</p>
+<p>En voici certaines: <code>~</code> fait le “non” bit à bit, <code>|</code> le “ou”, <code>&amp;</code> le “et” et <code>^</code> le “xor”. Il y a également les opérateurs de décalage. <code>n&lt;&lt;i</code> décale les bits de <code>n</code> de <code>i</code> cran vers la gauche, <code>n&gt;&gt;i</code> les décale vers la droite. Pour calculer <em>2<sup>n</sup></em> on peut par exemple faire <code>1&lt;&lt;n</code>.</p>
+<p>Voici un exemple de code pour générer les sous ensembles.</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+
+using namespace std;
+
+int main(){
+  vector&lt;int&gt; t{1,2,3};
+  int n=t.size();
+  for(int i=0;i&lt;(1&lt;&lt;n);++i){
+    for(int j=0;j&lt;n;++j)
+      if((i&gt;&gt;j)&amp;1)
+    cout &lt;&lt; t[j] &lt;&lt; &#39; &#39;;
+    cout &lt;&lt; &#39;\n&#39;;
+  }
+}</code></pre>
+<h2 id="sous-ensemble-de-taille-k">Sous ensemble de taille k</h2>
+<p>En utilisant la même idée de représentation d’ensemble par des bits, on peut générer les sous-ensembles de taille exactement <code>k</code>. Un hack connu du à Gosper permet de calculer le prochain sous-ensemble en temps constant, le code est assez cryptique mais c’est bon de savoir qu’il existe.</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+
+using namespace std;
+
+int main(){
+  vector&lt;int&gt; t{1,2,3,4,5};
+  int n=t.size();
+  int k=3;
+
+  int set = (1 &lt;&lt; k) - 1;
+  while (set &lt; (1&lt;&lt;n)) {
+    for(int j=0;j&lt;n;++j)
+      if((set&gt;&gt;j)&amp;1)
+    cout &lt;&lt; t[j] &lt;&lt; &#39; &#39;;
+    cout &lt;&lt; &#39;\n&#39;;
+
+    // Gosper&#39;s hack:
+    int c = set &amp; -set;
+    int r = set + c;
+    set = (((r^set) &gt;&gt; 2) / c) | r;
+  }
+}</code></pre>
+<h2 id="permutation">Permutation</h2>
+<p>Une autre génération possible est celle de toutes les permutations. Un algorithme existe pour en temps linéaire mais amorti constant calculer la permutation suivante dans l’ordre lexicographique. Cet algorithme est dans la librairie standard sous le nom <code>next_permutation</code>. Il agit sur un conteneur et le modifie.</p>
+<p>Avant de voir un exemple d’utilisation, quelques remarques. Il permet de générer les permutation dans l’ordre lexicographique donc si vais faites une boucle <code>do while</code> sur un tableau non trié, il n’affichera pas les première permutation. De même si votre tableau comporte des doublons, vous aurez moins de <em>n!</em> permutations.</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+
+using namespace std;
+
+int main(){
+  vector&lt;int&gt; t{1,2,3};
+
+  sort(begin(t), end(t));
+  do{
+    for(int x:t)
+      cout &lt;&lt; x &lt;&lt; &#39; &#39;;
+    cout &lt;&lt; &#39;\n&#39;;
+  }while(next_permutation(begin(t), end(t)));
+}</code></pre>
+<h1 id="fenwick-tree">Fenwick Tree</h1>
+<p>On veut une structure de donnée simulant un tableau <code>t</code> et permettant de répondre efficacement aux requêtes suivantes: <code>incremente(i, val)</code> incremente la case <code>i</code> de tableau de la valeur <code>val</code> (<code>val</code> peut être négatif), et <code>somme(i,j)</code> calcule la somme <em>t[i]+t[i+1]+…+t[j]</em>.</p>
+<h2 id="algorithme-naif">Algorithme Naif</h2>
+<p>Deux solutions sont simples, la première consiste à stocker le tableau tel quel et faire une boucle pour le calcul de la somme. Nous avons alors une complexité en <span class="math"> &lt; <em>O</em>(1), <em>O</em>(<em>n</em>) &gt; </span>.</p>
+<p>Une autre solution qui est l’opposé de celle-ci est de stocker les sommes préfixes. C’est à dire, utiliser un tableau <code>t'</code> avec <em>t’[i]=t[0]+…t[i]</em>. Le calcul de somme est alors en temps constant (<code>somme(i,j)=t'[j]-t'[i-1]</code>) en revanche la mise à jour d’une case modifie toutes les cases suivantes. Nous avons alors une complexité en <span class="math"> &lt; <em>O</em>(<em>n</em>), <em>O</em>(1) &gt; </span>.</p>
+<p>Dans ces deux cas la complexité en mémoire est linéaire.</p>
+<h2 id="fenwick-tree-1">Fenwick Tree</h2>
+<p>Voyons une solution de complexité <span class="math"> &lt; <em>O</em>(<em>l</em><em>n</em>(<em>n</em>)), <em>O</em>(<em>l</em><em>n</em>(<em>n</em>)) &gt; </span> utilisant également un espace mémoire linéaire. Cette structure de donnée s’appelle arbre de Fenwick ou Binary Indexed Tree (BIT) suivant les pays. Elle est particulièrement courte (20 lignes) à coder (quand on connait certaines astuces), elle a donc tout à fait sa place dans un poly d’EPS.</p>
+<p>La première remarque est que si l’on sait répondre à la requête <code>somme(0,j)</code> on sait répondre aux requêtes <code>somme(i,j)</code> car <code>somme(i,j)=somme(0,j)-somme(0,i-1)</code>. Avec la convention que <code>somme(0,i)</code> avec <em>i&lt;0</em> vaut <em>0</em>.</p>
+<p>L’idée est d’utiliser la solution des sommes préfixes avec une granularité plus fine. Nous allons utiliser un tableau <code>t'</code> tel que <code>t'[i]</code> contient la somme <code>t[erase(i)]+...+t[i]</code> où si l’écriture binaire de <em>i</em> est <em>x01…1</em> alors l’écriture binaire de <code>erase(i)</code> est <em>x00…0</em>.</p>
+<p>Par exemple: * <code>erase(11)=8</code> * <code>erase(15)=0</code></p>
+<p>Maintenant le calcul de <code>somme(0,i)</code> est simple il s’agit de <code>t'[i]+somme(0,erase(i)-1)</code>.</p>
+<p>Pour effectuer l’opération d’incrément de la case <em>i=x01…1</em>, il faut mettre à jour la case d'indice  <em>i</em> de<code>t'</code>, puis la case d'indice <em>next(i)=x11…1</em> où on a remplacé le <em>0</em> le plus à droite par un <em>1</em>, puis la case d'indice <em>next(next(i))</em>, et ainsi de suite en remplaçant au fur et à mesure les <em>0</em> par des <em>1</em> de droite à gauche.
+</p>
+<p>Dans les deux cas (si le calcul de l’indice suivant est en temps constant), le nombre d’opérations est borné par la taille de l’écriture binaire de <code>i</code>. Nous avons bien des opérations qui s’effectuent en temps <span class="math"> &lt; <em>O</em>(<em>l</em><em>n</em>(<em>n</em>)), <em>O</em>(<em>l</em><em>n</em>(<em>n</em>)) &gt; </span>.</p>
+<p>Voyons comment calculer <code>erase(i)</code>, il faut remplacer le bloc de <em>1</em> de poids faible par un bloc de <em>0</em>. Notons que si <em>i=x01…1</em>, <em>i+1=x10…0</em>. On a alors <code>erase(i)= i &amp; (i+1)</code>. Pour calculer l’indice suivant dans l’opération d’incrément, notons que si <em>i=x01…1</em>, <em>next(i)=x11…1</em>. On peut alors remarquer que <code>next(i)=i | (i+1)</code>.</p>
+<pre><code>int somme(int x, int y, const vector&lt;int&gt; &amp; t){
+  if(x==0){
+    int res=0;
+    while(y&gt;=0){
+      res+=t[y];
+      y=(y&amp;(y+1))-1;
+    }
+    return res;
+  }
+  else
+    return somme(0,y,t)-somme(0,x-1,t);
+}
+
+void incremente(int x, int inc, vector&lt;int&gt; &amp; t) {
+  while(x&lt;int(t.size())){
+    t[x]+=inc;
+    x=x|(x+1);
+  }
+}</code></pre>
+<h1 id="suffix-array">Suffix Array</h1>
+<h2 id="problème">Problème</h2>
+<p>On cherche à trier lexicographiquement tous les suffixes d’une chaine de caractères. On veut également pouvoir rapidement répondre aux requêtes demandant le plus grand préfixe commun (LCP) au suffixe commençant à la ième lettre et celui commençant à la jème lettre.</p>
+<p>Par exemple, le suffixe array (SA) de “bobocel” est:</p>
+<ul>
+<li>bobocel</li>
+<li>bocel</li>
+<li>cel</li>
+<li>el</li>
+<li>l</li>
+<li>obocel</li>
+<li>ocel</li>
+</ul>
+<h2 id="solution-naive">Solution naive</h2>
+<p>On peut créer tous les suffixes de la chaine, il y en a <span class="math"><em>n</em></span>, puis les trier. On a alors <span class="math"><em>O</em><em>n</em><em>l</em><em>g</em>(<em>n</em>)</span> comparaison mais attention une comparaison de chaines se fait en la longueur de la chaine. On a donc une complexité en <span class="math"><em>O</em>(<em>n</em><sup>2</sup><em>l</em><em>g</em>(<em>n</em>))</span>. On peut simplement répondre aux requêtes LCP en <span class="math"><em>O</em>(<em>n</em>)</span>.</p>
+<h2 id="solution-en-onlg2n">Solution en <span class="math"><em>O</em>(<em>n</em><em>l</em><em>g</em><sup>2</sup>(<em>n</em>))</span></h2>
+<h3 id="suffix-array-1">Suffix Array</h3>
+<p>On va construire la matrice <code>P</code> telle que <code>P[i][j]</code> contient la position lexicographique de la chaine <span class="math"><em>s</em><sub><em>i</em></sub>…<em>s</em><sub><em>i</em> + 2<sup><em></em><sup><em>j</em></sup></sup></sub></span> parmi tous les facteurs de taille <span class="math">2<sup><em>j</em></sup></span> de <span class="math"><em>s</em></span> (Avec la convention qu’un facteur qui déborde de la chaine est complété par des caractères blancs). Attention, si deux facteurs sont identiques ils doivent avoir la même position. On note qu’il y a seulement besoin de <span class="math"><em>O</em>(<em>l</em><em>n</em>(<em>n</em>))</span> lignes dans la matrice (les lignes suivantes étant toujours les mêmes). Et que la dernière ligne correspond bien à la position du suffixe commençant en <span class="math"><em>i</em></span> parmi tous les suffixes.</p>
+<p>Voyons comment construire ce tableau. La première ligne est la position d’une lettre (chaine de taille <span class="math">1</span>) parmi l’ensemble des lettres. En pratique comme ce qui nous intéresse est l’ordre relatif des chaines (i.e. on veut que si <span class="math"><em>s</em> &lt; <em>t</em></span> alors la position de <span class="math"><em>s</em></span> soit inférieur à la position de <span class="math"><em>t</em></span>) on peut simplement utiliser le numéro de la lettre. Par exemple si l’alphabet est les minuscules anglaise, la position peut être donnée par <code>lettre-'a'</code>.</p>
+<p>Voyons maintenant comment construire la ligne <span class="math"><em>j</em></span> à partir de la ligne <span class="math"><em>j</em> − 1</span>. Il suffit de savoir comparer la position de deux chaines de taille <span class="math">2<sup><em>j</em></sup></span>, ensuite on peut utiliser un tri pour connaitre leur position. Or si <span class="math"><em>s</em></span> et <span class="math"><em>t</em></span> sont deux chaines de même taille, <span class="math"><em>s</em> &lt; <em>t</em></span> si et seulement si <span class="math"><em>s</em></span> est plus petite que <span class="math"><em>t</em></span> sur sa première moitié ou ces moitiées sont égales et <span class="math"><em>s</em></span> est plus petite que <span class="math"><em>t</em></span> sur sa deuxième moitiée. La position de la chaine commençant en <span class="math"><em>i</em></span> de taille <span class="math">2<sup><em>j</em></sup></span> est alors la position (attention toujours au cas d’égalité) de <span class="math">(<em>P</em>[<em>i</em>][<em>j</em> − 1], <em>P</em>[<em>i</em> + 2<sup><em>j</em> − 1</sup>][<em>j</em> − 1])</span> (attention si <span class="math"><em>i</em> + 2<sup><em>j</em> − 1</sup></span> est plus grand que la taille de la chaine on compléte avec des blancs et donc <span class="math"><em>P</em>[<em>i</em>][<em>j</em> − 1] =  − 1</span>) dans l’ensemble de ces couples.</p>
+<p>Pour chaque ligne la complexité est celle de calculer la position d’une paire dans un ensemble de <span class="math"><em>n</em></span> paires et on a <span class="math"><em>O</em>(<em>l</em><em>n</em>(<em>n</em>))</span> lignes à calculer. Si on trie pour calculer la position on a alors un algorithme en <span class="math"><em>O</em>(<em>n</em><em>l</em><em>n</em><sup>2</sup>(<em>n</em>))</span>.</p>
+<p>Remarque: Vu que l’on trie des couples d’entiers entre <span class="math"> − 1</span> et <span class="math"><em>n</em></span> on peut en fait les trier en temps linéaire on a alors une complexité en <span class="math"><em>O</em>(<em>n</em><em>l</em><em>n</em>(<em>n</em>))</span>. En pratique on peut faire un tri radix stable sur la seconde composante de la paire puis sur la première, mais attention en pratique le gain est assez faible, et le risque est de faire une erreur lors du tri. Il est donc conseillé d’avoir le code dans le poly ou simplement d’utiliser sort de la STL.</p>
+<h3 id="longest-common-prefix">Longest common prefix</h3>
+<p>Avec cette matrice on peut également répondre rapidement <span class="math"><em>O</em>(<em>l</em><em>n</em>(<em>n</em>))</span> à la question: quel est le plus grand préfixe commun entre le suffixe commençant en <span class="math"><em>i</em></span> et celui commençant en <span class="math"><em>j</em></span> ?. Et sachant répondre à cette question il est facile de répondre à la question de connaitre le plus long préfixe entre le ième et le jème suffixe de <span class="math"><em>s</em></span> dans l’ordre lexicographique.</p>
+<p>L’idée est de regarder les positions des facteurs pour des tailles de facteur de plus en plus petite. Si la position pour une taille <span class="math"><em>k</em></span> i.e. <code>P[i][k]==P[j][k]</code> alors les facteurs sont les mêmes sur les <span class="math">2<sup><em>k</em></sup></span> premiers caractères et on regarde les facteurs commençant en <span class="math"><em>i</em> + 2<sup><em>k</em></sup></span> et <span class="math"><em>j</em> + 2<sup><em>k</em></sup></span>, sinon les facteurs ne sont pas les mêmes sur la taille <span class="math">2<sup><em>k</em></sup></span> mais ils peuvent l’être sur une taille plus petite, on regarde donc le facteur commençant en <span class="math"><em>i</em></span> et celui commençant en <span class="math"><em>j</em></span> de taille <span class="math">2<sup><em>k</em> − 1</sup></span>.</p>
+<h3 id="applications">Applications</h3>
+<p>L’application la plus classique est, étant donné un ensemble de chaines, trouver le plus grand facteur commun à ces chaines. Pour cela on calcule le suffix array combiné (par exemple en concatenant avec un délimiteur toutes les chaines) de toutes les chaines et on cherche pour toute fenêtre contenant un mot de chaque chaine le plus long prefixe commun entre le suffixe débutant la fenêtre et celui le terminant. Par construction c’est un préfixe de l’ensemble des suffixes de la fenêtre c’est donc un facteur d’au moins un suffixe par chaine et donc un facteur de chaque chaine.</p>
+<h1 id="afficher-les-nombres-sur-exactement-3-chiffres-en-complétant-avec-des-zéros">Afficher les nombres sur exactement 3 chiffres (en complétant avec des zéros)</h1>
+<p>Il faut utiliser <code>setfill</code> choisir le caractère de remplissage et <code>setw</code> pour choisir la taille du remplissage. Ces deux fonctions sont dans <code>iomanip</code></p>
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;iostream&gt;</span>
+<span class="ot">#include &lt;iomanip&gt;</span>
+
+<span class="kw">using</span> <span class="kw">namespace</span> std;
+
+<span class="dt">int</span> main () {
+  cout &lt;&lt; setfill (&#39;<span class="dv">0</span>&#39;) &lt;&lt; setw (<span class="dv">5</span>);
+  cout &lt;&lt; <span class="dv">77</span> &lt;&lt; endl;
+}</code></pre>
+<p>qui affiche</p>
+<pre><code>00077</code></pre>
+<h1 id="graphes">Graphes</h1>
+<p>Sauf exception (Floyd-Warshall par exemple) il est préférable de stocker le graphe sous forme de listes d’adjacences. Attention si vous codez un parcours un profondeur récursivement, il y a de forte chance que sur un gros graphe la pile d’appel explose provocant une segfault (d’un autre coté certains algorithmes sont bien plus simple à écrire récursivement).</p>
+<h2 id="détection-de-sommets-darticulation-et-de-ponts-dans-les-graphes-non-orientés">Détection de sommets d’articulation et de ponts dans les graphes non orientés</h2>
+<p>Un sommet d’articulation est un sommet tel que le supprimer rend le graphe non connexe. Un pont est une arête telle que la supprimer rend le graphe non connexe. Un algorithme naif, serait de tester pour chaque sommet et chaque arête si sa suppression déconnecte le graphe. On a alors un algorithme quadratique, voyons comment trouver tous les sommets d’articulation et ponts en temps linéaire grâce à un parcours en profondeur (DFS).</p>
+<p>Il est plus simple de coder cet algorithme récursivement. Pour chaque sommet <code>u</code>, on va garder le temps où il a été visité pour la première fois <code>dfs_num[u]</code> et le plus petit <code>dfs_num</code> apparaissant sur un sommet du sous arbre de dfs enraciné en <code>u</code>, on note cette valeur <code>dfs_low[u]</code>. Si on code récursivement on peut simplement initialiser <code>dfs_low[u]=dfs_num[u]</code>. Puis après chaque appel récursif sur un fils (même ceux déjà visité mais par pour son père) <code>v</code> de <code>u</code> faire <code>dfs_low[u] = min(dfs_low[u], dfs_low[v])</code>.</p>
+<p>Il est facile de voir si un sommet <code>u</code> avec un fils <code>v</code> vérifie <code>dfs_low[v] &gt;= dfs_num[u]</code>, alors <code>u</code> est un sommet d’articulation. Attention il y a un cas spécial pour la racine de l’arbre de dfs. En adaptant la condition, on peut facilement savoir si l’arête <code>uv</code> est un pont.</p>
+
+</body>
+</html>

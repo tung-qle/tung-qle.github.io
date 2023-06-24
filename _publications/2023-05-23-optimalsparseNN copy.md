@@ -1,5 +1,5 @@
 ---
-title: "Structured Support Exploration For Multilayer Sparse Matrix Factorization"
+title: "Does a sparse ReLU network training problem always admit an optimum ?"
 collection: publications
 permalink: /publication/2023-05-23-optimalsparseNN
 type: preprint

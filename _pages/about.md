@@ -8,7 +8,13 @@ redirect_from:
   - /about.html
 ---
 
-I am a third-year PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/). I am interested in theory of Neural Networks, non-convex optimization and other subjects in Theoretical Computer Science.
+# News
+
+*January 2024*: I am a postdoc at TSE (Toulouse School of Economics), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to Machine Learning.  
+
+*December 2023*: I defended my Ph.D., whose title is: "Algorithmic and theoretical aspects of sparse neural networks". 
+
+*September 2022*: I am a third-year PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/). I am interested in theory of Neural Networks, non-convex optimization and other subjects in Theoretical Computer Science.
 {: .text-justify}
 
 # My PhD project

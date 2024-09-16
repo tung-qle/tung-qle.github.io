@@ -5,5 +5,5 @@ permalink: /publication/2024-01-01-asymptoticnrank
 type: conf
 date: 2024-01-01
 venue: 'International Symposium on Information Theory'
-paperurl: 'https://arxiv.org/pdf/2308.07187'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/10619320'
 ---

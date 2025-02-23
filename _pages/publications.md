@@ -28,3 +28,9 @@ author_profile: true
 {% for post in site.publications reversed %}{% if post.type == "journal" %}
   {% include archive-single.html %}
 {% endif %}{% endfor %}
+
+## PhD Thesis
+{% include base_path %}
+{% for post in site.publications reversed %}{% if post.type == "thesis" %}
+  {% include archive-single.html %}
+{% endif %}{% endfor %}

@@ -10,7 +10,7 @@ redirect_from:
 
 # News
 
-*January 2024*: I am a postdoc at TSE (Toulouse School of Economics), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to Machine Learning.  
+*January 2024*: I am a postdoc at TSE (Toulouse School of Economics), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to bilevel optimization and Machine Learning.  
 
 *December 2023*: I defended my Ph.D., whose title is: "Algorithmic and theoretical aspects of sparse neural networks". 
 

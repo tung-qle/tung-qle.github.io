@@ -4,6 +4,6 @@ collection: publications
 permalink: /publication/2024-07-15-hardnessbilevel
 type: preprint
 date: 2024-07-15
-venue: 'submitted'
+venue: 'submitted (revision in Mathematical Programming)'
 paperurl: 'https://inria.hal.science/hal-04649435'
 ---

@@ -4,9 +4,24 @@ title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
-
+{%comment%}
 {% include base_path %}
 
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
+  <p>{{post.url}}</p>
+{% endfor %}
+{%endcomment%}
+
+{%assign years = site.data.years %}
+
+{% for year in years reversed %}
+  <section>
+  <h2> {{year}} </h2>
+  {% for post in site.teaching reversed %}
+    {%if post.year == year%}
+      {% include archive-single.html %}
+    {%endif%}
+  {% endfor %}
+</section>
 {% endfor %}

@@ -70,3 +70,8 @@ Failure to respect these deadlines might cause a reduction of $10 - 50\%$ of you
 <li>Do not wait until the deadline since I will be surely flooded with questions around that period and could not help much. </li>
 </ul>
 
+## An example for the Kaggle project
+
+The Kaggle challenge can be found at: <a href="https://www.kaggle.com/competitions/tmdb-box-office-prediction/overview">TMDB Box Office Prediction</a>. We are required to predict the revenue of films given their informations.
+
+The notebook example can be found at: <a href="/teaching_files/python-data-sciences/BoxOfficePrediction.ipynb">link</a>. 

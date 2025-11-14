@@ -8,16 +8,32 @@ redirect_from:
   - /about.html
 ---
 
-# News
-
-*January 2024*: I am a postdoc at TSE (Toulouse School of Economics), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to bilevel optimization and Machine Learning.  
-
-*December 2023*: I defended my Ph.D., whose title is: "Algorithmic and theoretical aspects of sparse neural networks". 
-
-*September 2022*: I am a third-year PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/). I am interested in theory of Neural Networks, non-convex optimization and other subjects in Theoretical Computer Science.
+ I am a *Maître de Conférences (MCF)* (equivalent to Assistant/Associate Professor in the American system) at Université Grenoble Alpes (UGA). I am a member of team [DAO](https://dao-ljk.imag.fr/). Our research team focus on methodological and theoretical aspects of optimization and machine learning. 
 {: .text-justify}
 
-# My PhD project
+Contact: quoc-tung [DOT] le [at] univ-grenoble-alpes [DOT] com
+
+# Research interests
+
+I am broadly interested in __*deep learning theory*__, __*non-convex*__/__*non-smooth optimization*__, __*learning with sparsity and structures*__. I am also into other subjects in __*Theoretical Computer Science*__.
+{: .text-justify}
+
+# Curriculum
+*September 2025 -* : Assistant Professor (MCF) at Université Grenoble Alpes (UGA), France. 
+{: .text-justify}
+
+*January 2024 - August 2025*: Postdoc at TSE (Toulouse School of Economics, France), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to bilevel optimization and Machine Learning.  
+{: .text-justify}
+
+*September 2020 - December 2023*: PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/). 
+{: .text-justify}
+
+*September 2017 - August 2020*: Bachelor and Masters at Ecole Normale Supérieure de Paris (ENS de Paris), France. I have a major in Computer Science and a minor in Mathematics
+{: .text-justify}
+
+*September 2014 - August 2017*: Engineering program at Hanoi University of Science and Technology (HUST), Vietnam.
+{: .text-justify}
+<!-- # My PhD project
 
 My PhD project considers several algorithmic and theoretical aspects of the training problem of sparse deep neural networks (DNNs) and the problem of sparse matrix factorization. In comparison to usual DNNs, Sparse DNNs have *sparse* weight matrices. Analoguously, in comparison to matrix factorization, sparse matrix factorization approximate a target matrix by product of (multiple) *sparse* factors.
 {: .text-justify}
@@ -37,5 +53,5 @@ For Sparse Matrix Factorization, we study in detail one of its variant named "Fi
       margin-top: 1em;"
     >
     <figcaption>Butterfly structure of the Hadamard transformation</figcaption>
-</figure>
+</figure> -->
 

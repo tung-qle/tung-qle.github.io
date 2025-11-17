@@ -11,7 +11,7 @@ redirect_from:
  I am a *Maître de Conférences (MCF)* (equivalent to Assistant/Associate Professor in the American system) at Université Grenoble Alpes (UGA). I am a member of team [DAO](https://dao-ljk.imag.fr/). Our research team focus on methodological and theoretical aspects of optimization and machine learning. 
 {: .text-justify}
 
-Contact: quoc-tung [DOT] le [at] univ-grenoble-alpes [DOT] com
+Contact: quoc-tung [DOT] le [at] univ-grenoble-alpes [DOT] fr
 
 # Research interests
 

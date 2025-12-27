@@ -33,6 +33,20 @@ I am broadly interested in __*deep learning theory*__, __*non-convex*__/__*non-s
 
 *September 2014 - August 2017*: Engineering program at Hanoi University of Science and Technology (HUST), Vietnam.
 {: .text-justify}
+
+# Miscellaneous
+
+<figure>
+  <img
+    src="./images/montblanc.png"
+     alt="Mont Blanc"
+     class="img-responsive"
+     style="float: center; 
+      margin-top: 1em;"
+    >
+    <figcaption>The Alps - taken from the station Jandri 3200 meter, Les 2 Alpes</figcaption>
+</figure>
+
 <!-- # My PhD project
 
 My PhD project considers several algorithmic and theoretical aspects of the training problem of sparse deep neural networks (DNNs) and the problem of sparse matrix factorization. In comparison to usual DNNs, Sparse DNNs have *sparse* weight matrices. Analoguously, in comparison to matrix factorization, sparse matrix factorization approximate a target matrix by product of (multiple) *sparse* factors.

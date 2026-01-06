@@ -25,12 +25,13 @@ Unless specified otherwise, place and time slot for these sessions are:
 </div>
 
 <ul style='text-align: justify;'>
-<li> <b>TP</b>: 9h45AM Monday, room F202-IM2AG and will be given by <a href="https://tguilmeau.github.io/">Thomas Guillaume"</a></li>
+<li> <b>TP</b>: 9h45AM Monday, room F202-IM2AG and will be given by <a href="https://tguilmeau.github.io/">Thomas Guillaume</a></li>
 <li> <b>Lecture and TD</b>: 9h45AM Thursday, room F321-IM2AG and will be given by myself</li> 
 </ul>
 
 ## Course evaluation
-The final evaluation will be based on a partial exam and a final one with ratio $3:7$. Neither TDs nor TPs are <b>not</b> noted but students are encouraged to follow them throughly.  
+
+__To be updated__: The final evaluation will be based on pratical sessions and a final one with ratio $3:7$. Neither TDs nor TPs are <b>not</b> noted but students are encouraged to follow them throughly.  
 
 ## Course materials
 <div style='text-align: justify;'>
@@ -62,4 +63,5 @@ While I do not use a specific textbook to prepare for the lectures, you are welc
 <li> <b>Numerical optimization</b> - <i>Jorge Nocedal</i> & <i>Stephen J. Wright</i> </li>
 <li> <b>Convex optimization</b> - <i>Stephen Boyd</i> & <i>Lieven Vandenberghe</i> </li> 
 <li> <b>Introduction to Optimization</b> - <i>Boris Teodorovitsj Polyak</i> </li> 
+<li> <b>Introductory Lectures on Convex Optimization: a basic course</b> - <i>Yurii Nesterov</i> </li> 
 </ul>

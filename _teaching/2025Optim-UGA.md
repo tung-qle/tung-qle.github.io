@@ -40,8 +40,7 @@ The final evaluation will be based on pratical sessions and a final exam. <b>Onl
 <div style='text-align: justify;'>
 It is worth noticing that lectures and TDs are designed to greatly complement each other. While TPs are somewhat designed independently, they also follow closely the lectures.
 <br>
-Materials for TPs can be found at: <b>to be updated</b>.
-<!-- <a href="https://github.com/wazizian/NumericalOptimization">https://github.com/wazizian/NumericalOptimization</a>.   -->
+Materials for TPs can be found at: <a href="https://github.com/tGuilmeau/numericalOptimization-M1AM">https://github.com/tGuilmeau/numericalOptimization-M1AM</a>.
 <br>
 Materials for lectures and TDs can be found below:
 </div>

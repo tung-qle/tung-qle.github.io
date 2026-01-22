@@ -30,26 +30,30 @@ Unless specified otherwise, place and time slot for these sessions are:
 </ul>
 
 ## Course evaluation
-
-__To be updated__: The final evaluation will be based on pratical sessions and a final one with ratio $3:7$. Neither TDs nor TPs are <b>not</b> noted but students are encouraged to follow them throughly.  
+<div style='text-align: justify;'>
+The final evaluation will be based on pratical sessions and a final exam. <b>Only a couple</b> of practical sessions will be noted (and you will be informed of those sessions). 
+<br>
+<b>Note for students from graduate school</b>: your final evaluation will be based additionally on another <b>mini-project</b>.  
+</div>
 
 ## Course materials
 <div style='text-align: justify;'>
-It is worth noticing that lectures and TDs are designed to complement each other. TPs are designed independently.
+It is worth noticing that lectures and TDs are designed to greatly complement each other. While TPs are somewhat designed independently, they also follow closely the lectures.
 <br>
-Materials for TPs can be found at: <a href="https://github.com/wazizian/NumericalOptimization">https://github.com/wazizian/NumericalOptimization</a>.  
+Materials for TPs can be found at: <b>to be updated</b>.
+<!-- <a href="https://github.com/wazizian/NumericalOptimization">https://github.com/wazizian/NumericalOptimization</a>.   -->
 <br>
 Materials for lectures and TDs can be found below:
 </div>
 
 <ul style='text-align: justify;'>
 <li> Lecture 1: <i>Introduction and refresher course</i> </li>
-<li> Lecture 2:  </li> 
-<li> Lecture 3:  </li> 
-<li> Lecture 4:  </li> 
-<li> Lecture 5:  </li> 
-<li> Lecture 6:  </li> 
-<li> Lecture 7:  </li> 
+<li> Lecture 2: <i>Convex functions and sets</i> </li> 
+<li> Lecture 3: <i>Gradient descent and theoretical properties</i> </li> 
+<li> Lecture 4: <i>Lower-bound of first-order methods and Nesterov optimal algorithm</i> </li> 
+<li> Lecture 5: <i>Stochastic gradient descent and theoretical properties</i> </li> 
+<li> Lecture 6: <i>Adaptative methods - Adagrad and variants</i> </li> 
+<li> Lecture 7: <i>Second-order methods - Newton algorithm</i> </li> 
 <li> Lecture 8:  </li> 
 <li> Lecture 9:  </li> 
 <li> Lecture 10:  </li> 

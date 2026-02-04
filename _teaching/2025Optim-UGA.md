@@ -48,12 +48,12 @@ Materials for lectures and TDs can be found below:
 <ul style='text-align: justify;'>
 <li> Lecture 1: <i>Introduction and refresher course</i> <a href="/teaching_files/numerical_optimization/lecture1.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td1.pdf">Exercises</a></li>
 <li> Lecture 2: <i>Convex functions and sets</i> </li> 
-<li> Lecture 3: <i>Gradient descent and theoretical properties</i> </li> 
+<li> Lecture 3: <i>Gradient descent and theoretical properties</i> (by <a href="https://matbesancon.xyz/">Mathieu Besançon</a>) </li> 
 <li> Lecture 4: <i>Lower-bound of first-order methods and Nesterov optimal algorithm</i> </li> 
 <li> Lecture 5: <i>Stochastic gradient descent and theoretical properties</i> </li> 
 <li> Lecture 6: <i>Adaptative methods - Adagrad and variants</i> </li> 
 <li> Lecture 7: <i>Second-order methods - Newton algorithm</i> </li> 
-<li> Lecture 8:  </li> 
+<li> Lecture 8: <i>Non-smooth optimization - Subgradient Descent</i> </li> 
 <li> Lecture 9:  </li> 
 <li> Lecture 10:  </li> 
 <li> Lecture 11:  </li> 

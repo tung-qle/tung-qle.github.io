@@ -36,6 +36,9 @@ The final evaluation will be based on pratical sessions and a final exam. <b>Onl
 <b>Note for students from graduate school</b>: your final evaluation will be based additionally on another <b>mini-project</b>.  
 </div>
 
+## Mini-project
+You find details about the mini-project <a href="{{ '/teaching/projects_Optim_UGA/' | relative_url }}">here</a>.
+
 ## Course materials
 <div style='text-align: justify;'>
 It is worth noticing that lectures and TDs are designed to greatly complement each other. While TPs are somewhat designed independently, they also follow closely the lectures.

@@ -114,8 +114,10 @@ The EM algorithm was formalized by <a href="https://academic.oup.com/jrsssb/arti
 ## Project 7: Splitting methods in optimal control
 <div style='text-align: justify;'>
 Optimal control is the problem of computing trajectories whose dynamics respect some constraints and which minimize some objective function. In the case of discrete-time formulation, optimal control can be seen as a constrained finite-dimensional optimization problem. The goal of this project is to implement a splitting optimization algorithm to solve such problems.
+</div>
 
 ### Main references
+<div style='text-align: justify;'>
 The sutdents are expected to implement the splitting algorithm proposed by <a href="https://web.stanford.edu/~boyd/papers/pdf/oper_splt_ctrl.pdf">Brendan O’Donoghue, Giorgos Stathopoulos, and Stephen Boyd</a> to solve discrete-time optimal control problem that exhibit linear dynamics constraints. Section II introduces the considered setting and Section III is devoted to the presentation of the splitting algorithm. Examples of applications are presented in Section IV. The students are expected to reproduce the results obtained in this paper (starting with the box-constrained linear-quadratic optimal control problem).
 </div>
 

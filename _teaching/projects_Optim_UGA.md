@@ -111,14 +111,12 @@ Expectation-maximization (EM) is a classic algorithm for maximum likelihood esti
 The EM algorithm was formalized by <a href="https://academic.oup.com/jrsssb/article/39/1/1/7027539?login=true">Arthur P. Dempster,  Ann Laird, and Donald B. Rubin in 1977</a>. The algorithms is defined in Section 2, and theoretical properties are provided in Section 3. Note that Section 3 also introduces a generalized EM algorithm. Section 4 is devoted to examples of applications. The EM algorithm is also introduced in a more modern format in <a href="https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/">the book Pattern Recognition and Machine Learning by Christopher M. Bishop (Chatper 9)</a>.
 </div>
 
-## Project 7: Sinkhorn's algorithm in optimal transport
+## Project 7: Splitting methods in optimal control
 <div style='text-align: justify;'>
-Computing the optimal transport between two discrete measures can be formalized as a linear optimization problem, whose reoslution can be slow.Sinkhorn's algorithm has been proposed to solve an entropic regularization of the original optimal transport problem, and has been shown to converge much faster. The goal of this project is to implement Sinkhorn's algorithm, compare it to linear solvers, and apply it on optimal transport problems, possibly originating from machine learning.
-</div>
+Optimal control is the problem of computing trajectories whose dynamics respect some constraints and which minimize some objective function. In the case of discrete-time formulation, optimal control can be seen as a constrained finite-dimensional optimization problem. The goal of this project is to implement a splitting optimization algorithm to solve such problems.
 
 ### Main references
-<div style='text-align: justify;'>
-The use of Sinkhorn's algorithm has been proposed in the context of regularized optimal transport by <a href="https://proceedings.neurips.cc/paper/2013/hash/af21d0c97db2e27e13572cbf59eb343d-Abstract.html">Marco Cuturi in 2013</a>. This algorithm is also detailed in the book <a href="https://arxiv.org/abs/1803.00567">Computational Optimal Transport by Gabriel Peyré and Marco Cuturi (Chapter 4)</a>.
+The sutdents are expected to implement the splitting algorithm proposed by <a href="https://web.stanford.edu/~boyd/papers/pdf/oper_splt_ctrl.pdf">Brendan O’Donoghue, Giorgos Stathopoulos, and Stephen Boyd</a> to solve discrete-time optimal control problem that exhibit linear dynamics constraints. Section II introduces the considered setting and Section III is devoted to the presentation of the splitting algorithm. Examples of applications are presented in Section IV. The students are expected to reproduce the results obtained in this paper (starting with the box-constrained linear-quadratic optimal control problem).
 </div>
 
 ## Project 8: Semi-smooth Newton methods for non-linear complementarity problems

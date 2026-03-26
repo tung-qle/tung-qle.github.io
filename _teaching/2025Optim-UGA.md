@@ -56,7 +56,7 @@ Materials for lectures and TDs can be found below:
 <li> Lecture 5: <i>Stochastic gradient descent and theoretical properties</i> <a href="/teaching_files/numerical_optimization/lecture5.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td5.pdf">Exercises</a> </li> 
 <li> Lecture 6: <i>Adaptative methods - Adagrad and variants </i> <a href="/teaching_files/numerical_optimization/lecture6.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td6.pdf">Exercises</a> </li> 
 <li> Lecture 7: <i>Second-order methods - Newton algorithm </i> <a href="/teaching_files/numerical_optimization/lecture7.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td7.pdf">Exercises</a>  </li> 
-<li> Lecture 8: <i>Non-smooth optimization - Subgradient Descent</i> </li> 
+<li> Lecture 8: <i>Non-smooth optimization - Subgradient Descent</i> <a href="/teaching_files/numerical_optimization/lecture8.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td8.pdf">Exercises</a> </li> 
 <li> Lecture 9: <i>Non-smooth optimization - Proximal algorithms</i> </li> 
 <li> Lecture 10: <i>Theory of constrained optimization</i> </li> 
 <li> Lecture 11: <i>Linear programming and Integer linear programming</i> </li> 

@@ -3,9 +3,9 @@ title: "Numerical Optimisation"
 collection: teaching
 type: "Master 1"
 venue: "Université Grenoble Alpes, UFR IM2AG"
-start_date: January 2026
-end_date: April 2026
-year: 2025-2026
+start_date: January 2027
+end_date: April 2027
+year: 2026-2027
 location: "Grenoble, France"
 position: Lecturer
 ---
@@ -25,7 +25,7 @@ Unless specified otherwise, place and time slot for these sessions are:
 </div>
 
 <ul style='text-align: justify;'>
-<li> <b>TP</b>: 9h45AM Monday, room F202-IM2AG and will be given by <a href="https://tguilmeau.github.io/">Thomas Guillaume</a></li>
+<li> <b>TP</b>: 9h45AM Monday, room F202-IM2AG and will be given by a TBD gentleman</li>
 <li> <b>Lecture and TD</b>: 9h45AM Thursday, room F321-IM2AG and will be given by myself</li> 
 </ul>
 
@@ -36,8 +36,8 @@ The final evaluation will be based on pratical sessions and a final exam. <b>Onl
 <b>Note for students from graduate school</b>: your final evaluation will be based additionally on another <b>mini-project</b>.  
 </div>
 
-## Mini-project
-You find details about the mini-project <a href="{{ '/teaching/projects_Optim_UGA/' | relative_url }}">here</a>.
+<!-- ## Mini-project
+You find details about the mini-project <a href="{{ '/teaching/projects_Optim_UGA/' | relative_url }}">here</a>. -->
 
 ## Course materials
 <div style='text-align: justify;'>
@@ -48,28 +48,14 @@ Materials for TPs can be found at: <a href="https://github.com/tGuilmeau/numeric
 Materials for lectures and TDs can be found below:
 </div>
 
-<!-- <ul style='text-align: justify;'>
-<li> Lecture 1: <i>Introduction and refresher course</i> <a href="/teaching_files/numerical_optimization/lecture1.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td1.pdf">Exercises</a></li>
-<li> Lecture 2: <i>Convex functions and sets</i> <a href="/teaching_files/numerical_optimization/lecture2.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td2.pdf">Exercises</a></li> 
-<li> Lecture 3: <i>Gradient descent and theoretical properties</i> (by <a href="https://matbesancon.xyz/">Mathieu Besançon</a>) <a href="/teaching_files/numerical_optimization/lecture3.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td3.pdf">Exercises</a></li> 
-<li> Lecture 4: <i>Lower-bound of first-order methods and Nesterov optimal algorithm </i>  <a href="/teaching_files/numerical_optimization/lecture4.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td4.pdf">Exercises</a> </li> 
-<li> Lecture 5: <i>Stochastic gradient descent and theoretical properties</i> <a href="/teaching_files/numerical_optimization/lecture5.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td5.pdf">Exercises</a> </li> 
-<li> Lecture 6: <i>Adaptative methods - Adagrad and variants </i> <a href="/teaching_files/numerical_optimization/lecture6.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td6.pdf">Exercises</a> </li> 
-<li> Lecture 7: <i>Second-order methods - Newton algorithm </i> <a href="/teaching_files/numerical_optimization/lecture7.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td7.pdf">Exercises</a>  </li> 
-<li> Lecture 8: <i>Non-smooth optimization - Subgradient Descent</i> <a href="/teaching_files/numerical_optimization/lecture8.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td8.pdf">Exercises</a> </li> 
-<li> Lecture 9: <i>Non-smooth optimization - Proximal algorithms</i> <a href="/teaching_files/numerical_optimization/lecture9.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td9.pdf">Exercises</a>  </li> 
-<li> Lecture 10: <i>Theory of constrained optimization</i> <a href="/teaching_files/numerical_optimization/lecture10.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td10.pdf">Exercises</a> </li> 
-<li> Lecture 11: <i>Linear programming and Integer linear programming</i> <a href="/teaching_files/numerical_optimization/lecture11.pdf">Lecture</a> <a href="/teaching_files/numerical_optimization/announcement_td11.pdf">Exercises</a> </li> 
-</ul> -->
-
 <ul style='text-align: justify;'>
 <li> Lecture 1: <i>Introduction and refresher course</i></li>
 <li> Lecture 2: <i>Convex functions and sets</i></li> 
 <li> Lecture 3: <i>Gradient descent and theoretical properties</i></li> 
-<li> Lecture 4: <i>Lower-bound of first-order methods and Nesterov optimal algorithm </i></li> 
-<li> Lecture 5: <i>Stochastic gradient descent and theoretical properties</i></li> 
-<li> Lecture 6: <i>Adaptative methods - Adagrad and variants </i></li> 
-<li> Lecture 7: <i>Second-order methods - Newton algorithm </i></li> 
+<li> Lecture 4: <i>Stochastic gradient descent and theoretical properties</i></li> 
+<li> Lecture 5: <i>Adaptative methods - Adagrad and variants</i></li> 
+<li> Lecture 6: <i>Second-order methods - Newton algorithm</i></li> 
+<li> Lecture 7: <i>Linear Minimization Oracle and related optimization methods</i></li> 
 <li> Lecture 8: <i>Non-smooth optimization - Subgradient Descent</i></li> 
 <li> Lecture 9: <i>Non-smooth optimization - Proximal algorithms</i></li> 
 <li> Lecture 10: <i>Theory of constrained optimization</i></li> 

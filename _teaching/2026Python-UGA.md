@@ -53,6 +53,16 @@ Your evaluation is entirely based on your final project. You will form a group (
 <li> A presentation ($10-15$ minutes, depending on the number of presentations) </li>
 </ul>
 
+## AI usage policy (inspired from <a href="https://cs336.stanford.edu/lectures/?trace=lecture_01">here</a>)
+<ul style='text-align: justify;'>
+<li> Coding agents can complete Kaggle challenges themselves, but you won't learn anything. Please choose wisely. </li>
+<li> AI autocomplete should be disabled in your IDE (non-AI autocomplete, e.g., autocompleting function names, is permitted).
+ </li>
+ <li> AI can be tremendously useful for answering questions and tutoring. </li>
+ <li>You can also use AI agents to build diagrams to visualize your workload (many tools exists, see <a href="https://app.dim0.net/share/JgW14mZ0cBLOd5p7MgmLbrzliXhm3Sp4Fv2TKL3gRbQ">here</a> or <a href="https://app.dim0.net/share/QdGrxSPLRm2ftiI_CosHhCtj437rHwTQa7JUPajx0FA">here</a> for examples).</li>
+</ul>
+
+
 ## Important deadlines
 <ul style='text-align: justify;'>
 <li> <b>11 October 2026</b>: Project group deadline. If you have difficulties finding your partner, please write me an email. </li>

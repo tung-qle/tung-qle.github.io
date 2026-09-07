@@ -23,6 +23,15 @@ This course has 8 classes. There is no lecture, and only practical sessions and 
 </div>
 
 <div style='text-align: justify;'>
+All classes take place at the room F201 - Building F on all Mondays from <b>28 September 2026</b> to <b>23 September 2026</b>, from 8h to 11h15, with <b> two </b> exceptions: 
+</div>
+
+<ul style='text-align: justify;'>
+<li> There is no class on <b>26 October 2026</b> during the Toussaint vacation.</li>
+<li> The second class will take place at the room F217 - Building F on <b>05 October 2026</b>.</li>
+</ul>
+
+<div style='text-align: justify;'>
 For practical sessions, students are invited to clone/download the following Github repository: <a href="https://github.com/tung-qle/python-for-data-sciences">https://github.com/tung-qle/python-for-data-sciences</a>
 </div>
 

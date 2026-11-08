@@ -76,7 +76,7 @@ Your evaluation is entirely based on your final project. You will form a group (
 <ul style='text-align: justify;'>
 <li> <b>11 October 2026</b>: Project group deadline. If you have difficulties finding your partner, please write me an email. </li>
 <li> <b>25 October 2026</b>: Kaggle challenge choices deadline. </li>
-<li> <b>15 Nomverber 2026</b>: Notebook and report submission. </li>
+<li> <b>16 Nomverber 2026</b>: Notebook and report submission. </li>
 <li> <b>23 November 2026</b>: Presentation </li>
 </ul>
 

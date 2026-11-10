@@ -22,10 +22,10 @@ I am broadly interested in __*deep learning theory*__, __*non-convex*__/__*non-s
 *September 2025 -* : Assistant Professor (MCF) at Université Grenoble Alpes (UGA), France. 
 {: .text-justify}
 
-*January 2024 - August 2025*: Postdoc at TSE (Toulouse School of Economics, France), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://www.irit.fr/~Edouard.Pauwels/) on semi-algebraic optimization and its application to bilevel optimization and Machine Learning.  
+*January 2024 - August 2025*: Postdoc at TSE (Toulouse School of Economics, France), working with [Jérôme Bolte](http://bolte.perso.math.cnrs.fr/) and [Edouard Pauwels](https://edouardpauwels.fr/) on semi-algebraic optimization and its application to bilevel optimization and Machine Learning.  
 {: .text-justify}
 
-*September 2020 - December 2023*: PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://people.irisa.fr/Remi.Gribonval/). 
+*September 2020 - December 2023*: PhD student in [OCKHAM team](https://team.inria.fr/dante/fr/), ENS Lyon, France. I am under the supervision of [Elisa Riccietti](http://perso.ens-lyon.fr/elisa.riccietti/) and [Rémi Gribonval](https://perso.ens-lyon.fr/remi.gribonval/). 
 {: .text-justify}
 
 *September 2017 - August 2020*: Bachelor and Masters at Ecole Normale Supérieure de Paris (ENS de Paris), France. I have a major in Computer Science and a minor in Mathematics
